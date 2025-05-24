@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\MemberController;
-use App\Http\Controllers\BorrowingController; // 1. Impor BorrowingController
+use App\Http\Controllers\BorrowingController;
+use App\Http\Controllers\DashboardController; // Impor DashboardController
 
 /*
 |--------------------------------------------------------------------------
@@ -16,10 +17,13 @@ use App\Http\Controllers\BorrowingController; // 1. Impor BorrowingController
 |
 */
 
-// Halaman awal (sementara diarahkan ke layouts.app, biasanya ke dashboard atau welcome)
+// Rute dashboard utama
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+// Redirect root '/' ke dashboard
 Route::get('/', function () {
-    return view('layouts.app'); // Ganti dengan view atau controller utama sesuai struktur aplikasimu
-})->name('home');
+    return redirect()->route('dashboard');
+});
 
 // Rute resource untuk buku
 Route::resource('books', BookController::class);
@@ -33,3 +37,5 @@ Route::get('borrowings/create', [BorrowingController::class, 'create'])->name('b
 Route::post('borrowings', [BorrowingController::class, 'store'])->name('borrowings.store');
 Route::put('borrowings/{borrowing}/return', [BorrowingController::class, 'returnBook'])->name('borrowings.return');
 Route::get('borrowings/{borrowing}', [BorrowingController::class, 'show'])->name('borrowings.show'); // Opsional
+
+// ... (rute autentikasi jika ada)

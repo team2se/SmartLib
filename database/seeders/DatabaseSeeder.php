@@ -1,10 +1,11 @@
 <?php
 
-namespace Database\Seeders;
+namespace Database\Seeders; // <--- TAMBAHKAN BARIS INI
 
-use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+// Jika MemberSeeder juga ada di namespace Database\Seeders,
+// Anda tidak perlu 'use Database\Seeders\MemberSeeder;' secara eksplisit di sini.
+// Namun, jika berbeda namespace, Anda perlu menambahkannya.
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,11 +14,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        $this->call([
+            BookSeeder::class,
+            MemberSeeder::class, // Pastikan MemberSeeder.php juga memiliki namespace Database\Seeders;
         ]);
+
+        // ... sisa kode Anda ...
     }
 }

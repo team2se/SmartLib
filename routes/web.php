@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\BookController; // 1. Impor BookController
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\MemberController; // 1. Impor MemberController
 
 /*
 |--------------------------------------------------------------------------
@@ -18,5 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// 2. Tambahkan rute resource untuk books
+// Rute resource untuk books
 Route::resource('books', BookController::class);
+
+// Rute resource untuk members
+Route::resource('members', MemberController::class);

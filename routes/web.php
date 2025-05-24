@@ -15,8 +15,12 @@ use App\Http\Controllers\MemberController; // 1. Impor MemberController
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts.app');
 });
 
 // Rute resource untuk books

@@ -65,7 +65,7 @@
                             <a class="nav-link {{ request()->routeIs('members.*') ? 'active' : '' }}" href="{{ route('members.index') }}">Manajemen Anggota</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ request()->routeIs('borrowings.*') ? 'active' : '' }}" href="#">Manajemen Peminjaman</a> {{-- Ganti # dengan route('borrowings.index') jika sudah ada --}}
+                            <a class="nav-link {{ request()->routeIs('borrowings.*') ? 'active' : '' }}" href="{{ route('borrowings.index') }}">Manajemen Peminjaman</a>
                         </li>
                     </ul>
 

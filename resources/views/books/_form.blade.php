@@ -18,11 +18,13 @@
 
 <div class="mb-3">
     <label for="isbn" class="form-label">ISBN</label>
-    <input type="text" class="form-control @error('isbn') is-invalid @enderror" id="isbn" name="isbn" value="{{ old('isbn', $book->isbn ?? '') }}" required>
+    <input type="text" class="form-control @error('isbn') is-invalid @enderror" id="isbn" name="isbn" value="{{ old('isbn', $book->isbn ?? '') }}" required maxlength="14" placeholder="Contoh: 1234-567890123">
     @error('isbn')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
 </div>
+
+@vite(['resources/css/app.css', 'resources/js/app.js'])
 
 <div class="mb-3">
     <label for="published_year" class="form-label">Tahun Terbit</label>

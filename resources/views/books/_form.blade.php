@@ -24,7 +24,6 @@
     @enderror
 </div>
 
-@vite(['resources/css/app.css', 'resources/js/app.js'])
 
 <div class="mb-3">
     <label for="published_year" class="form-label">Tahun Terbit</label>
@@ -44,3 +43,4 @@
 
 <button type="submit" class="btn btn-primary">{{ $submitButtonText ?? 'Simpan' }}</button>
 <a href="{{ route('books.index') }}" class="btn btn-secondary">Batal</a>
+<!-- @vite(['resources/css/app.css', 'resources/js/app.js']) -->

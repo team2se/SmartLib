@@ -26,13 +26,13 @@
     <table class="table table-striped table-hover">
         <thead class="table-dark">
             <tr>
-                <th>No</th>
-                <th>Judul</th>
-                <th>Penulis</th>
-                <th>ISBN</th>
-                <th>Tahun Terbit</th>
-                <th>Stok</th>
-                <th>Aksi</th>
+                <th scope="col">No</th>
+                <th scope="col">Judul</th>
+                <th scope="col">Penulis</th>
+                <th scope="col">ISBN</th>
+                <th scope="col">Tahun Terbit</th>
+                <th scope="col">Stok</th>
+                <th scope="col">Aksi</th>
             </tr>
         </thead>
         <tbody>

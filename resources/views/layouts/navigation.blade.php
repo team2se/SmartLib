@@ -11,12 +11,27 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex"> {{-- SATU DIV UNTUK SEMUA NAV LINK DESKTOP --}}
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                </div>
+
+                    <x-nav-link :href="route('books.index')" :active="request()->routeIs('books.*')">
+                        {{ __('Buku') }}
+                    </x-nav-link>
+
+                    {{-- Tambahkan link lain seperti Anggota dan Peminjaman di sini --}}
+                    {{-- Contoh:
+                    <x-nav-link :href="route('members.index')" :active="request()->routeIs('members.*')">
+                        {{ __('Anggota') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('borrowings.index')" :active="request()->routeIs('borrowings.*')">
+                        {{ __('Peminjaman') }}
+                    </x-nav-link>
+                    --}}
+                </div> {{-- AKHIR DARI DIV NAV LINK DESKTOP --}}
             </div>
+
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
@@ -66,11 +81,25 @@
 
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
-        <div class="pt-2 pb-3 space-y-1">
+        <div class="pt-2 pb-3 space-y-1"> {{-- SATU DIV UNTUK SEMUA RESPONSIVE NAV LINK --}}
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
-        </div>
+
+            <x-responsive-nav-link :href="route('books.index')" :active="request()->routeIs('books.*')">
+                {{ __('Buku') }}
+            </x-responsive-nav-link>
+
+            {{-- Tambahkan link lain seperti Anggota dan Peminjaman di sini (Responsive) --}}
+            {{-- Contoh:
+            <x-responsive-nav-link :href="route('members.index')" :active="request()->routeIs('members.*')">
+                {{ __('Anggota') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('borrowings.index')" :active="request()->routeIs('borrowings.*')">
+                {{ __('Peminjaman') }}
+            </x-responsive-nav-link>
+            --}}
+        </div> {{-- AKHIR DARI DIV RESPONSIVE NAV LINK --}}
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">

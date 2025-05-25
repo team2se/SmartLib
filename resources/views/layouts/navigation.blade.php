@@ -19,16 +19,14 @@
                     <x-nav-link :href="route('books.index')" :active="request()->routeIs('books.*')">
                         {{ __('Buku') }}
                     </x-nav-link>
-
-                    {{-- Tambahkan link lain seperti Anggota dan Peminjaman di sini --}}
-                    {{-- Contoh:
+                    
                     <x-nav-link :href="route('members.index')" :active="request()->routeIs('members.*')">
                         {{ __('Anggota') }}
                     </x-nav-link>
                     <x-nav-link :href="route('borrowings.index')" :active="request()->routeIs('borrowings.*')">
                         {{ __('Peminjaman') }}
                     </x-nav-link>
-                    --}}
+                    
                 </div> {{-- AKHIR DARI DIV NAV LINK DESKTOP --}}
             </div>
 
@@ -91,14 +89,14 @@
             </x-responsive-nav-link>
 
             {{-- Tambahkan link lain seperti Anggota dan Peminjaman di sini (Responsive) --}}
-            {{-- Contoh:
+
             <x-responsive-nav-link :href="route('members.index')" :active="request()->routeIs('members.*')">
                 {{ __('Anggota') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('borrowings.index')" :active="request()->routeIs('borrowings.*')">
                 {{ __('Peminjaman') }}
             </x-responsive-nav-link>
-            --}}
+
         </div> {{-- AKHIR DARI DIV RESPONSIVE NAV LINK --}}
 
         <!-- Responsive Settings Options -->

@@ -1,41 +1,29 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BookController;
-use App\Http\Controllers\MemberController;
-use App\Http\Controllers\BorrowingController;
-use App\Http\Controllers\DashboardController; // Impor DashboardController
+use App\Http\Controllers\MemberController;     // <--- 1. TAMBAHKAN IMPORT INI
+use App\Http\Controllers\BorrowingController; // <--- 2. TAMBAHKAN IMPORT INI
+use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
-// Rute dashboard utama
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-
-// Redirect root '/' ke dashboard
 Route::get('/', function () {
-    return redirect()->route('dashboard');
+    return view('welcome');
 });
 
-// Rute resource untuk buku
-Route::resource('books', BookController::class);
+Route::get('/dashboard', [DashboardController::class, 'index'])
+    ->middleware(['auth', 'verified']) // 'verified' opsional
+    ->name('dashboard');
 
-// Rute resource untuk anggota
-Route::resource('members', MemberController::class);
+Route::middleware(['auth', 'verified'])->group(function () { // 'verified' opsional, sesuaikan
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-// Rute untuk peminjaman & pengembalian buku
-Route::get('borrowings', [BorrowingController::class, 'index'])->name('borrowings.index');
-Route::get('borrowings/create', [BorrowingController::class, 'create'])->name('borrowings.create');
-Route::post('borrowings', [BorrowingController::class, 'store'])->name('borrowings.store');
-Route::put('borrowings/{borrowing}/return', [BorrowingController::class, 'returnBook'])->name('borrowings.return');
-Route::get('borrowings/{borrowing}', [BorrowingController::class, 'show'])->name('borrowings.show'); // Opsional
+    // Rute untuk resources
+    Route::resource('books', BookController::class);
+    Route::resource('members', MemberController::class);
+    Route::resource('borrowings', BorrowingController::class); // <--- 3. PERBAIKI NAMA RESOURCE DAN CONTROLLER
+});
 
-// ... (rute autentikasi jika ada)
+require __DIR__.'/auth.php';

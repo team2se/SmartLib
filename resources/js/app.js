@@ -1,9 +1,7 @@
-// resources/js/app.js
+import './bootstrap';
 
-import './bootstrap'; // Ini biasanya sudah ada untuk setup Laravel default
+import Alpine from 'alpinejs';
 
-// Impor skrip custom Anda
-import './isbn-formatter.js';
+window.Alpine = Alpine;
 
-// Kode JavaScript lain Anda mungkin ada di sini juga
-// ...
+Alpine.start();

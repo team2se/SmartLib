@@ -69,7 +69,7 @@ Pastikan Anda telah menginstal:
 ## Instruksi Instalasi / Pengaturan
 
 ```bash
-git clone <url_repositori> # Ganti dengan URL repositori Anda
+git clone https://github.com/team2se/SmartLib.git
 cd <direktori_repositori> # Masuk ke direktori proyek Anda
 
 composer install

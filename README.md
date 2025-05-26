@@ -1,102 +1,115 @@
-# Aplikasi Perpustakaan 
+-----
 
-Sebuah aplikasi web untuk mengelola koleksi buku, anggota, dan peminjaman di perpustakaan. Dibangun dengan framework Laravel dan menampilkan antarmuka pengguna yang modern dan interaktif menggunakan Tailwind CSS dan Alpine.js.
+# Aplikasi Perpustakaan
+
+Sebuah aplikasi web yang komprehensif untuk mengelola koleksi buku, anggota, dan transaksi peminjaman di perpustakaan. Dibangun di atas framework **Laravel** yang tangguh, aplikasi ini menawarkan antarmuka pengguna yang modern dan interaktif berkat integrasi **Tailwind CSS** dan **Alpine.js**.
+
+-----
 
 ## Teknologi yang Digunakan
 
-* **Backend:** PHP 8.x, Laravel 11.x
-* **Frontend:**
-    * Tailwind CSS 4.x
-    * Alpine.js 3.x
-    * Vite
-* **Basis Data:** MySQL / MariaDB (bawaan, dapat dikonfigurasi di `.env`)
-* **Alat Pengembangan:** Composer, Node.js, npm
+  * **Backend:** PHP 8.x, Laravel 11.x
+  * **Frontend:**
+      * Tailwind CSS 4.x
+      * Alpine.js 3.x
+      * Vite
+  * **Basis Data:** MySQL / MariaDB (dapat dikonfigurasi di `.env`). Untuk penggunaan cepat, SQLite juga didukung.
+  * **Alat Pengembangan:** Composer, Node.js, npm
+
+-----
 
 ## Fitur Utama
 
-* Ringkasan dasbor.
-* Manajemen Buku Komprehensif (Buat, Baca, Perbarui, Hapus - CRUD).
-* Manajemen Anggota.
-* Manajemen Peminjaman.
-* Antarmuka pengguna (UI) modern dan responsif dibangun dengan Tailwind CSS.
-* Elemen interaktif didukung oleh Alpine.js:
-    * Menu navigasi mobile dinamis.
-    * Menu dropdown pengguna.
-    * Modal konfirmasi interaktif (misalnya, untuk aksi hapus).
-    * Pencarian dan pemfilteran sisi klien pada daftar buku.
-* Autentikasi aman (Login, Register, Logout).
+  * Ringkasan Dasbor
+  * Manajemen Buku (CRUD)
+  * Manajemen Anggota
+  * Manajemen Peminjaman
+  * Antarmuka Modern & Responsif
+  * Komponen Interaktif: dropdown, modal, pencarian real-time
+  * Sistem Autentikasi Aman
+
+-----
+
+## Dokumentasi Aplikasi
+
+Berikut adalah cuplikan antarmuka dari aplikasi perpustakaan ini:
+
+### Halaman Login
+
+### Dasbor Utama
+
+Menampilkan statistik jumlah buku, anggota, dan peminjaman.
+
+### Manajemen Buku
+
+CRUD data buku, pencarian real-time, dan tampilan tabel responsif.
+
+### Manajemen Anggota
+
+Formulir untuk menambah dan mengedit data anggota, beserta daftar anggota yang sudah terdaftar.
+
+### Manajemen Peminjaman
+
+Lihat status peminjaman, tanggal jatuh tempo, dan pengembalian buku.
+
+-----
 
 ## Prasyarat
 
-Sebelum Anda memulai, pastikan Anda telah menginstal yang berikut ini:
+Pastikan Anda telah menginstal:
 
-* PHP (versi yang kompatibel dengan Laravel, mis., `>= 8.1`)
-* Composer
-* Node.js (versi LTS terbaru direkomendasikan)
-* npm (biasanya disertakan dengan Node.js)
-* Server basis data (mis., MySQL, MariaDB, PostgreSQL)
+  * PHP (\>= 8.1)
+  * Composer
+  * Node.js & npm
+  * Database server (MySQL/MariaDB/SQLite)
+  * Git (opsional tapi disarankan)
+
+-----
 
 ## Instruksi Instalasi / Pengaturan
 
-1.  **Clone repositori:**
-    ```bash
-    git clone <url_repositori>
-    cd <direktori_repositori>
-    ```
+```bash
+git clone <url_repositori> # Ganti dengan URL repositori Anda
+cd <direktori_repositori> # Masuk ke direktori proyek Anda
 
-2.  **Instal dependensi PHP:**
-    ```bash
-    composer install
-    ```
+composer install
+npm install
 
-3.  **Instal dependensi JavaScript:**
-    ```bash
-    npm install
-    ```
+cp .env.example .env
+php artisan key:generate
 
-4.  **Buat file environment Anda:** Salin `.env.example` ke `.env`:
-    ```bash
-    cp .env.example .env
-    ```
+# Konfigurasikan .env sesuai pengaturan database Anda
 
-5.  **Buat kunci aplikasi:**
-    ```bash
-    php artisan key:generate
-    ```
+php artisan migrate
+php artisan db:seed # Opsional: untuk mengisi database dengan data awal
+npm run dev # Untuk pengembangan, kompilasi aset secara berkelanjutan
+# npm run build # Untuk persiapan produksi, kompilasi dan minimalkan aset
 
-6.  **Konfigurasi basis data Anda:** Buka file `.env` dan perbarui pengaturan `DB_*` (mis., `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`).
+php artisan serve
+```
 
-7.  **Jalankan migrasi basis data:** Ini akan membuat tabel yang diperlukan di basis data Anda.
-    ```bash
-    php artisan migrate
-    ```
+-----
 
-8.  **Seed basis data (opsional namun direkomendasikan untuk data awal):** Ini akan mengisi basis data dengan data contoh jika seeder dikonfigurasi.
-    ```bash
-    php artisan db:seed
-    ```
+## Menjalankan Aplikasi
 
-9.  **Build aset frontend:**
-    * Untuk pengembangan dengan hot reloading:
-        ```bash
-        npm run dev
-        ```
-    * Untuk build produksi:
-        ```bash
-        npm run build
-        ```
+Akses aplikasi di browser melalui:
 
-## Menjalankan Aplikasi (Server Pengembangan)
+```
+http://localhost:8000
+```
 
-* Jalankan server pengembangan Laravel (biasanya pada port 8000):
-    ```bash
-    php artisan serve
-    ```
-* Jika Anda tidak menggunakan `npm run build` dan menginginkan hot module replacement untuk aset frontend, pastikan `npm run dev` juga berjalan di terminal terpisah.
-* Akses aplikasi di `http://localhost:8000` (atau port yang ditampilkan oleh `php artisan serve`).
+Untuk pengembangan, jalankan `npm run dev`. Untuk persiapan produksi, jalankan `npm run build` agar aset frontend berfungsi dengan benar.
+
+-----
 
 ## Menjalankan Tes
 
-Untuk menjalankan tes fitur dan unit bawaan:
 ```bash
 php artisan test
+```
+
+-----
+
+## Penutup
+
+Terima kasih telah menggunakan Aplikasi Perpustakaan ini\! Dibuat untuk mempermudah pengelolaan perpustakaan dengan teknologi modern dan fleksibel.

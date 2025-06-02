@@ -24,6 +24,16 @@ Route::middleware(['auth', 'verified'])->group(function () { // 'verified' opsio
     Route::resource('books', BookController::class);
     Route::resource('members', MemberController::class);
     Route::resource('borrowings', BorrowingController::class); // <--- 3. PERBAIKI NAMA RESOURCE DAN CONTROLLER
+    Route::middleware(['auth', 'verified'])->group(function () {
+    // ... (rute profile, books, members) ...
+
+    Route::resource('borrowings', BorrowingController::class);
+
+    // Tambahkan rute ini untuk aksi pengembalian buku
+    Route::put('/borrowings/{borrowing}/return', [BorrowingController::class, 'returnBook'])
+          ->name('borrowings.return'); // Memberi nama pada rute
+});
+
 });
 
 require __DIR__.'/auth.php';

@@ -16,7 +16,7 @@
 
                     {{-- Menampilkan error validasi global (jika ada) --}}
                     @if ($errors->any())
-                        <div class="mb-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded-md">
+                        <div class="mb-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded-md dark:bg-red-700 dark:text-red-100 dark:border-red-600">
                             <strong class="font-bold">Oops! Ada yang salah:</strong>
                             <ul class="mt-1 list-disc list-inside text-sm">
                                 @foreach ($errors->all() as $error)
@@ -29,15 +29,9 @@
                     <form action="{{ route('books.store') }}" method="POST">
                         @csrf {{-- Token CSRF wajib untuk form POST --}}
 
-                        {{-- Meng-include form partial.
-                             Kita tidak mengirimkan variabel 'book' karena ini adalah form create.
-                             Variabel $book akan undefined di _form.blade.php,
-                             namun old('field_name', $book->field_name ?? '') akan menangani ini
-                             dengan baik, karena $book->field_name akan null.
-                        --}}
                         @include('books._form', [
+                            'book' => new \App\Models\Book, // KIRIM INSTANCE BOOK KOSONG
                             'submitButtonText' => 'Tambah Buku'
-                            // 'book' => new \App\Models\Book // Opsional: kirim instance Book kosong jika _form membutuhkannya untuk kondisi tertentu
                         ])
                     </form>
                 </div>

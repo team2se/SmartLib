@@ -84,7 +84,7 @@ php artisan key:generate
 # Konfigurasikan .env sesuai pengaturan database Anda
 
 php artisan migrate
-php artisan db:seed # Opsional: untuk mengisi database dengan data awal
+php artisan db:seed # untuk mengisi database dengan data awal
 npm run dev # Untuk pengembangan, kompilasi aset secara berkelanjutan
 # npm run build # Untuk persiapan produksi, kompilasi dan minimalkan aset
 

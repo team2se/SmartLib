@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             BookSeeder::class,
             MemberSeeder::class, // Pastikan MemberSeeder.php juga memiliki namespace Database\Seeders;
+            BorrowingSeeder::class,
         ]);
 
         // ... sisa kode Anda ...

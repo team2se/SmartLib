@@ -36,19 +36,22 @@ Berikut adalah cuplikan antarmuka dari aplikasi perpustakaan ini:
 
 ### Halaman Login
 
+<img width="1440" alt="Screenshot 2025-06-12 at 20 26 04" src="https://github.com/user-attachments/assets/c1cd35de-d19a-4ad7-8808-ea8e43f5dd23" />
+
 ### Dasbor Utama
+
+<img width="1440" alt="Screenshot 2025-06-12 at 20 26 21" src="https://github.com/user-attachments/assets/5bb240d9-5348-43b8-8658-6faab789a81b" />
 
 Menampilkan statistik jumlah buku, anggota, dan peminjaman.
 
 ### Manajemen Buku
 
-CRUD data buku, pencarian real-time, dan tampilan tabel responsif.
-
-### Manajemen Anggota
-
-Formulir untuk menambah dan mengedit data anggota, beserta daftar anggota yang sudah terdaftar.
+<img width="1440" alt="Screenshot 2025-06-12 at 20 26 34" src="https://github.com/user-attachments/assets/99bb2dc8-b730-411e-b252-4309a4efcebe" />
 
 ### Manajemen Peminjaman
+
+<img width="1440" alt="Screenshot 2025-06-12 at 20 26 40" src="https://github.com/user-attachments/assets/ca9ddf3b-232a-4600-a17e-06c20b7d0447" />
+
 
 Lihat status peminjaman, tanggal jatuh tempo, dan pengembalian buku.
 

@@ -14,7 +14,7 @@ class MemberSeeder extends Seeder
     public function run(): void
     {
         DB::table('members')->insert([
-            // --- Data Asli Anda ---
+            // --- Data Asli Anda (1-10) ---
             [
                 'name' => 'Budi Perkasa',
                 'email' => 'budi.perkasa@example.com',
@@ -39,8 +39,6 @@ class MemberSeeder extends Seeder
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
-
-            // --- Data Tambahan ---
             [
                 'name' => 'Dewi Lestari',
                 'email' => 'dewi.lestari@example.com',
@@ -94,6 +92,48 @@ class MemberSeeder extends Seeder
                 'email' => 'indah.p@example.com',
                 'phone_number' => '081987654321',
                 'address' => 'Jl. Kartini No. 99, Denpasar',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+
+            // --- Tambahan hingga 15 ---
+            [
+                'name' => 'Rina Wati',
+                'email' => 'rina.wati@example.com',
+                'phone_number' => '081712348765',
+                'address' => 'Jl. Ahmad Yani No. 50, Balikpapan',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Joko Susilo',
+                'email' => 'joko.s@example.com',
+                'phone_number' => '085233445566',
+                'address' => 'Jl. Veteran No. 22, Malang',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Lia Kurnia',
+                'email' => 'lia.kurnia@example.com',
+                'phone_number' => '087856781234',
+                'address' => 'Jl. Pangeran Antasari No. 18, Banjarmasin',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Heru Prasetyo',
+                'email' => 'heru.p@example.com',
+                'phone_number' => null,
+                'address' => 'Jl. Gatot Subroto No. 3, Manado',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Maya Sari',
+                'email' => 'maya.sari@example.com',
+                'phone_number' => '081298765432',
+                'address' => 'Jl. Teuku Umar No. 101, Pontianak',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],

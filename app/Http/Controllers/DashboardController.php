@@ -37,11 +37,11 @@ class DashboardController extends Controller
                             ->get();
 
         // 6. (Opsional) Daftar buku yang sudah melewati jatuh tempo (terlambat)
-        $overdueBooks = Borrowing::with(['book', 'member'])
-                            ->where('status', 'borrowed')
-                            ->where('due_date', '<', Carbon::now())
+        // --- KODE BARU YANG BENAR ---
+$overdueBooks = Borrowing::with(['book', 'member'])
+                            ->where('status', 'overdue') // Langsung cari status 'overdue'
                             ->orderBy('due_date', 'asc')
-                            ->limit(5) // Batasi 5 buku saja
+                            ->limit(5)
                             ->get();
 
 
